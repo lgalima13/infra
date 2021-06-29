@@ -1,4 +1,4 @@
-
+{% include "base.html" %}
 {% load static %}
 
 {% block title %}
@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+
 <table>
     <thead>
         <tr>
@@ -19,9 +20,17 @@
     <tbody>
         <tr>
             <td>{{ aniversariante.nome }}</td>
+        </tr>
+        <tr>
             <td>{{ aniversariante.datanascimento }}</td>
+        </tr>
+        <tr>
             <td>{{ aniversariante.setor }}</td>
-            <td><img src="{{ media.foto }}" alt="" /></td>
+        </tr>
+        <tr>
+            {% if aniversariante.foto %}
+                <td><img src="{{ aniversariante.foto.url }}" alt="" /></td>
+            {% endif %}
         </tr>
     </tbody>
     {% endfor %}
