@@ -1,0 +1,29 @@
+
+{% load static %}
+
+{% block title %}
+    Lista de Aniversariantes
+{% endblock %}
+
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>NOME</th>
+            <th>ANIVERSÁRIO</th>
+            <th>SETOR</th>
+            <th>FOTO</th>
+        </tr>
+    </thead>
+    {% for aniversariante in aniversariantes %}
+    <tbody>
+        <tr>
+            <td>{{ aniversariante.nome }}</td>
+            <td>{{ aniversariante.datanascimento }}</td>
+            <td>{{ aniversariante.setor }}</td>
+            <td><img src="{{ media.foto }}" alt="" /></td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+{% endblock %}
